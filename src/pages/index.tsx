@@ -1,0 +1,12 @@
+export { DireitaEsquerda } from "./DireitaEsquerda";
+export { Pandemia } from "./Pandemia";
+export { Trabalho } from "./Trabalho";
+export { Volta } from "./Volta";
+export { Videos } from "./Videos";
+export { Verdade } from "./Verdade";
+export { Projetos } from "./Projetos";
+export { ProjetoFarmacia } from "./ProjetoFarmacia";
+export { MinhaHistoria } from "./MinhaHistoria";
+export { Vereadora } from "./Vereadora";
+export { Programa } from "./Programa";
+export { Home } from "./Home";

@@ -1,0 +1,108 @@
+.home-container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.home-section-1 {
+  position: relative;
+  display: flex;
+  width: 100%;
+  background: url("../assets/Page-Turner.svg") no-repeat left top,
+    linear-gradient(to bottom, transparent 80%, rgba($primary-color-1, 1)),
+    linear-gradient(to bottom right, transparent 70%, rgba($primary-color-1, 1)),
+    url("../assets/Laudiceia.png") no-repeat right bottom;
+  place-content: flex-start;
+  place-items: center;
+  background-size: 30%, 100%, 100%, 60vh;
+  @media (max-width: $bp-medium) {
+    background-size: 30%, 100%, 100%, 40vh;
+    background-position: top left, 100% 100%;
+    @media (orientation: landscape) {
+      background-position: top left, 100% 100%;
+    }
+  }
+
+  @media (max-width: $bp-small) {
+    position: relative;
+    top: 15vh;
+    background: url("../assets/Laudiceia.png") no-repeat center top;
+    background-size: 50vh;
+    padding-top: 70vh;
+    padding-bottom: 30vh;
+  }
+}
+
+.home-section-2 {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  font-size: 3rem;
+  background-image: url("../assets/Pattern-Randomized.svg");
+  background-color: $primary-color-1;
+  color: white;
+
+  .home__about-box {
+    @media (max-width: $bp-medium) {
+      padding: 3rem;
+    }
+    @media (max-width: $bp-small) {
+      padding: 3rem;
+    }
+    display: grid;
+    grid-template-rows: 1fr auto;
+    row-gap: 2rem;
+    justify-items: center;
+    text-align: justify;
+    max-width: 50ch;
+    & > p {
+      font-size: 2.5rem;
+    }
+  }
+}
+.home-section-3 {
+  @media (max-width: $bp-small) {
+    display: none;
+  }
+  width: 100%;
+  min-height: 10vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+  align-items: center;
+  justify-items: space-around;
+  font-size: 3rem;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(darken($secondary-color-1, 20%), 0.3),
+      rgba(darken($secondary-color-1, 20%), 0.3)
+    ),
+    url("../assets/Protruding-Squares.svg");
+}
+
+.home__button {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  height: 100%;
+  transition: all 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+  color: $primary-color-1;
+  font-weight: 700;
+
+  &:active {
+    background-color: darken($primary-color-1, 5%);
+  }
+  &:hover {
+    background-color: $primary-color-3;
+  }
+  & > p {
+    color: $primary-color-1;
+  }
+  &:not(:last-child) {
+    border-right: 1px solid $primary-color-1;
+  }
+}

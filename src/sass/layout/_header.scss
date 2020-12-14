@@ -1,0 +1,132 @@
+.header-container {
+  position: relative;
+  background-image: linear-gradient(
+    to right,
+    rgba($secondary-color-1, 0.8) 30%,
+    rgba($secondary-color-1, 0.8),
+    rgba($secondary-color-1, 1)
+  );
+  z-index: 10;
+  position: fixed;
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
+  padding: 1rem 0;
+  font-size: 3rem;
+  @media (max-width: $bp-large) and (orientation: landscape) {
+    font-size: 2rem;
+  }
+  @media (max-width: $bp-medium) {
+    font-size: 3rem;
+
+    @media (orientation: landscape) {
+      font-size: 2rem;
+    }
+  }
+  @media (max-width: $bp-small) {
+    font-size: 3rem;
+  }
+}
+
+.header__logo {
+  display: flex;
+  flex-wrap: nowrap;
+  place-items: center;
+  place-content: center;
+  max-width: 40%;
+  @media (max-width: $bp-large) and (orientation: landscape) {
+    // height: 12rem;
+  }
+  @media (max-width: $bp-medium) {
+    // height: 15rem;
+
+    @media (orientation: landscape) {
+      // height: 8rem;
+    }
+  }
+  @media (max-width: $bp-small) {
+    flex-wrap: wrap;
+    // height: 7rem;
+  }
+  &-name {
+  }
+}
+
+.header__menu {
+  display: inherit;
+}
+
+.header__menu-links {
+  @media (max-width: $bp-large) {
+    & > :not(:nth-last-child(-n + 3)) {
+      display: none;
+    }
+  }
+  @media (max-width: $bp-medium) {
+    & > :not(:nth-last-child(-n + 3)) {
+      display: none;
+    }
+  }
+
+  display: inherit;
+  grid-template-columns: repeat(6, auto);
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.menu-link {
+  min-width: 7rem;
+  border-radius: 50px;
+  padding: 1.5rem 1rem;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $primary-color-1;
+  font-weight: 700;
+  border: 1px solid rgba(white, 0.5);
+  box-shadow: 0 0 3px rgba(black, 0.5);
+
+  &#facebook-link {
+    color: #3b5998;
+  }
+  &#instagram-link {
+    background: radial-gradient(
+      circle at 30% 107%,
+      #fdf497 0%,
+      #fdf497 5%,
+      #fd5949 45%,
+      #d6249f 60%,
+      #285aeb 90%
+    );
+    -webkit-background-clip: text;
+    /* Also define standard property for compatibility */
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &#burger-link {
+    border: none;
+    box-shadow: none;
+
+    &:hover {
+      border: none;
+      box-shadow: none;
+      background: none;
+    }
+  }
+
+  &:hover {
+    border: 1px solid rgba(white, 1);
+    box-shadow: 2px 5px 5px 5px rgba(black, 0.5);
+    background-color: $primary-color-3;
+    transform: scale(1.01);
+    transition: all 0.2s;
+  }
+  &:active {
+    border: 1px solid white;
+    box-shadow: 0 0 3px rgba(black, 0.2);
+  }
+}

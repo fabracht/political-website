@@ -1,0 +1,58 @@
+.about-container {
+  display: inline flex;
+  // padding: 2rem;
+  padding-top: 20rem;
+  position: relative;
+  place-content: center;
+  background-image: linear-gradient(
+      to bottom,
+      rgba($primary-color-1, 0.2) 8%,
+      rgba($primary-color-1, 0.2) 10%,
+      rgba($secondary-color-1, 0.3)
+    ),
+    url("../assets/Pattern-Randomized.svg");
+  // display: grid;
+  // height: 100vh;
+}
+
+.about-section {
+  &-1 {
+    display: inline flex;
+    place-content: center;
+    place-items: center;
+    flex-wrap: wrap;
+    flex-basis: clamp(400px, 100%, 1080px);
+
+    @for $i from 1 through 7 {
+      :nth-child(#{$i}) {
+        order: #{$i};
+      }
+    }
+    :nth-child(3) {
+      order: 4;
+      // border: 1px solid red;
+    }
+    :nth-child(4) {
+      // text-align: center;
+      order: 3;
+      // border: 1px solid red;
+    }
+    &-text {
+      grid-area: txt;
+      flex-basis: 50%;
+      font-size: 2.5rem;
+      line-height: 3.5rem;
+      padding: 5px 2%;
+      color: white;
+      font-weight: 500;
+      text-align: center;
+      @media (max-width: $bp-small) {
+        text-align: justify;
+        flex-basis: 90%;
+      }
+    }
+    &-img {
+      padding: 0 1rem;
+    }
+  }
+}
